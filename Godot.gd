@@ -8,7 +8,6 @@ export var velocitat : int = 300
 var direccio = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rotation_degrees = 90
 	position = Vector2(0,0)
 
 
@@ -26,5 +25,13 @@ func _process(delta):
 		direccio += Vector2(-1,0)
 
 
-func _on_Personatge_area_entered(area):
-	modulate = Color(1,0,0)
+func _on_Personatge_area_entered(area: Area2D):
+	if area.is_in_group("Inicial"):
+		modulate = Color(0,1,0)
+	elif area.is_in_group("Final"):
+		modulate = Color(1,0,0)
+	
+
+
+func _on_Personatge_area_exited(area: Area2D):
+	modulate = Color(1,1,1)
