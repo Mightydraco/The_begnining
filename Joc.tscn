@@ -37,7 +37,6 @@ scale = Vector2( -15.2317, 1.95023 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area3"]
 position = Vector2( -26.064, 166.647 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Personatge" to="Personatge" method="_on_Personatge_area_entered"]
