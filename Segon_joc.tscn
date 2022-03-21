@@ -1,14 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://KinGod.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terra.tscn" type="PackedScene" id=2]
-[ext_resource path="res://KinGod.gd" type="Script" id=3]
+[ext_resource path="res://platformer-pack-redux-360-assets/PNG/Ground/Planet/planet.png" type="Texture" id=3]
+[ext_resource path="res://platformer-pack-redux-360-assets/PNG/Backgrounds/blue_shroom.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="BlueShroom" type="Sprite" parent="."]
+position = Vector2( 512, 298 )
+scale = Vector2( 1.00781, 0.581055 )
+texture = ExtResource( 4 )
+
 [node name="Terra" parent="." instance=ExtResource( 2 )]
-position = Vector2( -211, -3 )
+position = Vector2( -694, 2 )
+
+[node name="Terra2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -183, -52 )
+
+[node name="Terra3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -568, -254 )
+
+[node name="Terra3" parent="Terra3" instance=ExtResource( 2 )]
+position = Vector2( 447, -104 )
+
+[node name="Planet" type="Sprite" parent="Terra3/Terra3"]
+position = Vector2( 858, 580 )
+scale = Vector2( 2.61328, 0.253906 )
+texture = ExtResource( 3 )
 
 [node name="KinGod" parent="." instance=ExtResource( 1 )]
-position = Vector2( 498, 116 )
-script = ExtResource( 3 )
+position = Vector2( 44, 424 )
+
+[node name="Planet" type="Sprite" parent="."]
+position = Vector2( 290, 323 )
+scale = Vector2( 2.58594, 0.304688 )
+texture = ExtResource( 3 )
+
+[node name="Planet2" type="Sprite" parent="."]
+position = Vector2( 678, 527 )
+scale = Vector2( 2.64208, 0.253906 )
+texture = ExtResource( 3 )
+
+[node name="Planet3" type="Sprite" parent="."]
+position = Vector2( 165.125, 582 )
+scale = Vector2( 2.58008, 0.253906 )
+texture = ExtResource( 3 )

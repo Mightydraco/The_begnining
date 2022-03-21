@@ -20,7 +20,31 @@ func _physics_process(delta):
 	if Input.is_action_pressed("mou_esquerra"):
 		velocitat += Vector2.LEFT * velocitat_base
 	if Input.is_action_just_pressed("mou_adalt") and salts_disponibles > 0:
+		velocitat.y = 0
 		velocitat += salt
 		salts_disponibles -= 1
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat,Vector2.UP)
+	
+	if position.y >= 1000:
+		position = Vector2(0,0)
+	
+	anima(velocitat)
+
+func anima(velocitat: Vector2):
+	var animacio : AnimatedSprite = $AnimatedSprite
+	
+	if velocitat.x > 0:
+		animacio.flip_h = false
+		animacio.play("walk")
+		
+	elif velocitat.x < 0:
+		animacio.flip_h = true
+		animacio.play("walk")
+		
+	if velocitat.y < -1:
+		animacio.play("jump")
+		return
+		
+	if abs(velocitat.x) < 0.1:
+		animacio.play("stand")
