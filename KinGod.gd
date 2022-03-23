@@ -48,3 +48,8 @@ func anima(velocitat: Vector2):
 		
 	if abs(velocitat.x) < 0.1:
 		animacio.play("stand")
+
+
+func _on_DoorOpenMid_body_entered(body):
+	get_tree().change_scene("res://Escena_2.tscn")
+		

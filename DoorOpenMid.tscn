@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://platformer-pack-redux-360-assets/PNG/Tiles/doorOpen_top.png" type="Texture" id=1]
+[ext_resource path="res://platformer-pack-redux-360-assets/PNG/Tiles/doorOpen_mid.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 41.8604
+height = 18.572
+
+[node name="Porta" type="Area2D"]
+
+[node name="DoorOpenMid" type="Sprite" parent="."]
+position = Vector2( 0, -6 )
+scale = Vector2( 0.699218, 0.640625 )
+texture = ExtResource( 2 )
+
+[node name="DoorOpenTop" type="Sprite" parent="DoorOpenMid"]
+position = Vector2( 0, -127 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -22 )
+shape = SubResource( 1 )

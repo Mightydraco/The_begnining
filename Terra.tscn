@@ -6,12 +6,11 @@ extents = Vector2( 164.875, 17 )
 [node name="Terra" type="StaticBody2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 696.0
+margin_left = 695.0
 margin_top = 562.0
 margin_right = 1025.0
 margin_bottom = 596.0
 
 [node name="Terra2" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 859.875, 579 )
 shape = SubResource( 1 )
