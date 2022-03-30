@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://platformer-pack-redux-360-assets/PNG/Backgrounds/blue_land.png" type="Texture" id=1]
 [ext_resource path="res://Terra.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://platformer-pack-redux-360-assets/PNG/Players/128x256/Green/alienGreen_stand.png" type="Texture" id=9]
 [ext_resource path="res://platformer-pack-redux-360-assets/PNG/Players/128x256/Yellow/alienYellow_stand.png" type="Texture" id=10]
 [ext_resource path="res://platformer-pack-redux-360-assets/PNG/Tiles/signRight.png" type="Texture" id=11]
+[ext_resource path="res://UFO.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -64,6 +65,12 @@ position = Vector2( 42, 96 )
 position = Vector2( -42, -96 )
 current = true
 
+[node name="SignRight" type="Sprite" parent="KinGod"]
+position = Vector2( 2296, 110 )
+rotation = 1.5708
+scale = Vector2( 2.10243, 0.685023 )
+texture = ExtResource( 11 )
+
 [node name="Terra" parent="." instance=ExtResource( 2 )]
 position = Vector2( -822, -358 )
 
@@ -110,3 +117,7 @@ texture = ExtResource( 6 )
 position = Vector2( 1869, 266 )
 scale = Vector2( 2.59766, 0.28125 )
 texture = ExtResource( 6 )
+
+[node name="UFO" parent="." instance=ExtResource( 12 )]
+
+[connection signal="body_entered" from="UFO" to="KinGod" method="_on_Area2D_body_entered"]
