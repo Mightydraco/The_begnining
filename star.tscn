@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://platformer-pack-redux-360-assets/PNG/Items/star.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 28.0713
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4, 0 )
+shape = SubResource( 1 )
+
+[node name="Star" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 1, -5 )
+texture = ExtResource( 1 )

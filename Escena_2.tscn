@@ -58,18 +58,18 @@ position = Vector2( 183, 177 )
 scale = Vector2( 0.929688, 0.445312 )
 texture = ExtResource( 11 )
 
+[node name="SignRight2" type="Sprite" parent="."]
+position = Vector2( 2194, 130 )
+rotation = 1.5708
+scale = Vector2( 2.10243, 0.685023 )
+texture = ExtResource( 11 )
+
 [node name="KinGod" parent="." instance=ExtResource( 3 )]
 position = Vector2( 42, 96 )
 
 [node name="Camera2D" type="Camera2D" parent="KinGod"]
 position = Vector2( -42, -96 )
 current = true
-
-[node name="SignRight" type="Sprite" parent="KinGod"]
-position = Vector2( 2296, 110 )
-rotation = 1.5708
-scale = Vector2( 2.10243, 0.685023 )
-texture = ExtResource( 11 )
 
 [node name="Terra" parent="." instance=ExtResource( 2 )]
 position = Vector2( -822, -358 )
@@ -90,7 +90,6 @@ position = Vector2( 1008, -313 )
 position = Vector2( 2066, 185 )
 frames = SubResource( 1 )
 animation = "flag"
-frame = 1
 playing = true
 
 [node name="Dirt" type="Sprite" parent="."]

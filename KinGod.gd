@@ -57,3 +57,7 @@ func _on_DoorOpenMid_body_entered(body):
 
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://Escena_3.tscn")
+
+
+func _on_Star_body_entered(body):
+	get_tree().change_scene("res://Victory.tscn")
